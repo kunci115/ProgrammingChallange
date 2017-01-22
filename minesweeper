@@ -1,0 +1,77 @@
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Jan  8 16:48:47 2017
+
+@author: root
+"""
+def check():
+    for xx in range(len(m)):   
+        for yy in range(len(m[xx])):
+            counter = 0
+            if(m[xx][yy]!='*'):
+                try:
+                    if(m[xx][yy+1]=='*'):
+                        counter +=1
+                except:
+                    counter+=0
+                try:
+                    if(m[xx+1][yy]=='*'):
+                        counter +=1    
+                except:
+                    counter += 0
+                try:
+                    if(m[xx+1][yy+1]=='*'):
+                        counter +=1   
+                except:
+                    counter+=0
+                try:
+                    if(m[xx][yy-1]=='*'):
+                        counter +=1
+                except:
+                    counter+=0
+                try:
+                    if(m[xx-1][yy]=='*'):
+                        counter +=1    
+                except:
+                    counter += 0
+                try:
+                    if(m[xx-1][yy-1]=='*'):
+                        counter +=1   
+                except:
+                    counter+=0
+                try:
+                    if(m[xx+1][yy-1]=='*'):
+                        counter +=1   
+                except:
+                    counter+=0
+                try:
+                    if(m[xx-1][yy+1]=='*'):
+                        counter +=1   
+                except:
+                    counter+=0
+            if counter == 0:
+                if(m[xx][yy]=='*'):
+                    counter = '*'
+            print counter,
+        print '\n'
+
+stop = False
+while stop == False:
+    field =raw_input().strip().split()
+    a = field[0]
+    b = field[1]
+    c = int(a)
+    d = int(b)
+    check()
+    
+    if (c == 0 and d == 0):
+        stop = True
+    else:
+        l = d
+        m = []
+        for i in range(0,c):
+            o =raw_input()
+            m.append(o)
+    
+    
