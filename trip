@@ -10,22 +10,22 @@ while stop == False:
     x = int(raw_input())
     if x == 0:
         stop = True
-    duit = 0.00
-    si = []
-    for z in range(x):
-        si.append(float(raw_input()))
-        duit+=si[z]
-    
-    avg = duit/x
-    n = 0.00
-    p = 0.00
-    for i in si:
-        if(i > avg):
-            p+= i - avg
-        else:
-            n+= avg - i
-            
-    if(n < p):
-        print n
     else:
-        print p
+        duit = 0.00
+        si = []
+        for z in range(x):
+            si.append(float(raw_input()))
+            duit+=si[z]
+        avg = duit/x
+        n = 0.00
+        p = 0.00
+        for i in si:
+            if(i > avg):
+                p+= i - avg
+            else:
+                n+= avg - i
+                
+        if(n < p):
+            print n
+        else:
+            print p
